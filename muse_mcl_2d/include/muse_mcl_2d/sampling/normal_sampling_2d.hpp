@@ -4,7 +4,7 @@
 #include <ros/time.h>
 
 #include <cslibs_math_ros/tf/tf_provider.hpp>
-#include <cslibs_plugins/plugin.hpp>
+#include <cslibs_plugins/common/plugin.hpp>
 #include <muse_mcl_2d/instance/sample_2d.hpp>
 #include <muse_mcl_2d/map/map_provider_2d.hpp>
 #include <muse_smc/smc/traits/normal_sampling.hpp>
@@ -12,7 +12,7 @@
 namespace muse_mcl_2d {
 class NormalSampling2D
     : public muse_smc::traits::NormalSampling<Hypothesis2D>::type,
-      public cslibs_plugins::Plugin {
+      public cslibs_plugins::Plugin<NormalSampling2D> {
  public:
   using Ptr = std::shared_ptr<NormalSampling2D>;
   using map_providers_t = std::map<std::string, MapProvider2D::Ptr>;

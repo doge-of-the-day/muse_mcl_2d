@@ -4,7 +4,7 @@
 #include <ros/node_handle.h>
 
 #include <cslibs_math_ros/tf/tf_provider.hpp>
-#include <cslibs_plugins/plugin.hpp>
+#include <cslibs_plugins/common/plugin.hpp>
 #include <cslibs_plugins_data/data.hpp>
 #include <cslibs_plugins_data/types/odometry_2d.hpp>
 #include <muse_mcl_2d/instance/sample_2d.hpp>
@@ -13,7 +13,7 @@
 namespace muse_mcl_2d {
 class PredictionModel2D
     : public muse_smc::traits::PredictionModel<Hypothesis2D>::type,
-      public cslibs_plugins::Plugin {
+      public cslibs_plugins::Plugin<PredictionModel2D> {
  public:
   using Ptr = std::shared_ptr<PredictionModel2D>;
   using ConstPtr = std::shared_ptr<PredictionModel2D const>;

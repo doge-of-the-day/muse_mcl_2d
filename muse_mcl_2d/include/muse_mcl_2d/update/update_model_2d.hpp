@@ -4,16 +4,17 @@
 #include <ros/node_handle.h>
 
 #include <cslibs_math_ros/tf/tf_provider.hpp>
-#include <cslibs_plugins/plugin.hpp>
+#include <cslibs_plugins/common/plugin.hpp>
 #include <cslibs_plugins_data/data.hpp>
 #include <muse_mcl_2d/instance/sample_2d.hpp>
 #include <muse_smc/smc/traits/update_model.hpp>
 
 namespace muse_mcl_2d {
 class UpdateModel2D : public muse_smc::traits::UpdateModel<Hypothesis2D>::type,
-                      public cslibs_plugins::Plugin {
+                      public cslibs_plugins::Plugin<UpdateModel2D> {
  public:
   using Ptr = std::shared_ptr<UpdateModel2D>;
+  using base_t = cslibs_plugins::Plugin<UpdateModel2D>;
   using data_t = muse_smc::traits::Data<Hypothesis2D>::type;
   using transform_t = muse_smc::traits::Transform<Hypothesis2D>::type;
   using state_t = muse_smc::traits::State<Hypothesis2D>::type;
@@ -24,11 +25,11 @@ class UpdateModel2D : public muse_smc::traits::UpdateModel<Hypothesis2D>::type,
   static std::string Type() { return "muse_mcl_2d::UpdateModel2D"; }
 
   inline std::size_t getModelId() const override {
-    return cslibs_plugins::Plugin::getId();
+    return base_t::getId();
   }
 
   inline std::string const &getName() const override {
-    return cslibs_plugins::Plugin::getName();
+    return base_t::getName();
   }
 
   inline void setup(const cslibs_math_ros::tf::TFProvider::Ptr &tf,

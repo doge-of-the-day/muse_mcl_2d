@@ -9,8 +9,8 @@
 #include <tf/time_cache.h>
 
 #include <cslibs_math_ros/tf/tf_listener.hpp>
-#include <cslibs_plugins/plugin_factory.hpp>
-#include <cslibs_plugins/plugin_loader.hpp>
+#include <cslibs_plugins/common/plugin_factory.hpp>
+#include <cslibs_plugins/ros/plugin_loader.hpp>
 #include <muse_mcl_2d/density/sample_density_2d.hpp>
 #include <muse_mcl_2d/map/map_provider_2d.hpp>
 #include <muse_mcl_2d/prediction/prediction_integral_2d.hpp>

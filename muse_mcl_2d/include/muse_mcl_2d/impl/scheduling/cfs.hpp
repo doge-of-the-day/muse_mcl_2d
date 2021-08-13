@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cslibs_plugins/plugin.hpp>
+#include <cslibs_plugins/common/plugin.hpp>
 #include <ext/pb_ds/priority_queue.hpp>
 #include <muse_mcl_2d/scheduling/scheduler_2d.hpp>
 #include <muse_smc/smc/traits/update.hpp>

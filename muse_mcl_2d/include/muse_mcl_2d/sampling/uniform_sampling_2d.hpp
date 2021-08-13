@@ -2,7 +2,7 @@
 #define MUSE_MCL_2D_UNIFORM_2D_HPP
 
 #include <cslibs_math_ros/tf/tf_provider.hpp>
-#include <cslibs_plugins/plugin.hpp>
+#include <cslibs_plugins/common/plugin.hpp>
 #include <muse_mcl_2d/instance/sample_2d.hpp>
 #include <muse_mcl_2d/map/map_2d.hpp>
 #include <muse_mcl_2d/map/map_provider_2d.hpp>
@@ -11,7 +11,7 @@
 namespace muse_mcl_2d {
 class UniformSampling2D
     : public muse_smc::traits::UniformSampling<Hypothesis2D>::type,
-      public cslibs_plugins::Plugin {
+      public cslibs_plugins::Plugin<UniformSampling2D> {
  public:
   using Ptr = std::shared_ptr<UniformSampling2D>;
   using map_providers_t = std::map<std::string, MapProvider2D::Ptr>;

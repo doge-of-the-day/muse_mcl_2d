@@ -11,11 +11,11 @@
 #include <cslibs_math/statistics/weighted_angular_mean.hpp>
 #include <cslibs_math/statistics/stable_weighted_distribution.hpp>
 
-#include <cslibs_plugins/plugin.hpp>
+#include <cslibs_plugins/common/plugin.hpp>
 
 namespace muse_mcl_2d {
 class EIGEN_ALIGN16 SampleDensity2D : public muse_smc::traits::SampleSet<Hypothesis2D>::type::sample_density_t,
-                                      public cslibs_plugins::Plugin
+                                      public cslibs_plugins::Plugin<SampleDensity2D>
 {
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW

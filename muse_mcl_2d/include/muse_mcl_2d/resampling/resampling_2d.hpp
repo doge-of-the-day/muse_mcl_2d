@@ -9,7 +9,7 @@
 
 namespace muse_mcl_2d {
 class Resampling2D : public muse_smc::traits::Resampling<Hypothesis2D>::type,
-                     public cslibs_plugins::Plugin {
+                     public cslibs_plugins::Plugin<Resampling2D> {
  public:
   using Ptr = std::shared_ptr<Resampling2D>;
   using base_t = muse_smc::traits::Resampling<Hypothesis2D>::type;
